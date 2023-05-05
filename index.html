@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random String Generator</title>
+    <script>
+      function generateString() {
+        // Define the characters that can be used to create the random string
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789[]:;?><,./!@#$%^&*()_+=-";
+        
+        // Set the length of the random part of the string
+        const length = 40;
+        
+        // Initialize the string variable with "Syn_G"
+        let result = "Syn_G";
+        
+        // Generate the random string
+        for (let i = 0; i < length; i++) {
+          result += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        
+        // Display the string on the webpage
+        document.getElementById("result").innerHTML = result;
+      }
+      
+      // Call the generateString() function every 4 seconds
+      setInterval(generateString, 4000);
+    </script>
+  </head>
+  <body>
+    <h1>Random String Generator</h1>
+    <p id="result"></p>
+  </body>
+</html>
